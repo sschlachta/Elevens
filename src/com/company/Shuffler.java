@@ -1,5 +1,4 @@
 package com.company;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -54,9 +53,10 @@ public class Shuffler {
      * the cards in one half with the cards in the other.
      * @param values is an array of integers simulating cards to be shuffled.
      */
+
+
     public static void perfectShuffle(int[] values) {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-
 
         Card cards[] = new Card[52];
         Card shuffled[] = new Card[52];
@@ -95,15 +95,26 @@ public class Shuffler {
     public static void selectionShuffle(int[] values) {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 
+        Card cards[] = new Card[52];
+        Card empty = new Card("Empty", "Empty", 60);
+
         Card shuffled[] = new Card[52];
 
         for (int k = 0; k <=51; k++){
 
             Random rand = new Random();
             int j = rand.nextInt(51);
-            
 
-            if(cards[j].isEmpty)
+            if(cards[j].equals(empty)){
+
+                continue;
+
+            } else {
+
+                shuffled[k] = cards[j];
+                cards[j] = empty;
+
+            }
 
         }
 

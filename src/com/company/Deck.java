@@ -13,7 +13,6 @@ public class Deck {
 
     public Deck(String[] ranks, String[] suits, int[] values) {
 
-
         //do I have to make another list? I think there is an easier way but I will come back to this later
 
         cards = new ArrayList<>();
@@ -29,8 +28,7 @@ public class Deck {
         }
 
         size = cards.size();
-
-        //cards.shuffle();
+        shuffle();
 
     }
 
@@ -69,7 +67,26 @@ public class Deck {
      */
     public void shuffle() {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+
+        Card cards[] = new Card[52];
+        Card empty = new Card("Empty", "Empty", 60);
+
+        Card shuffled[] = new Card[52];
+
+        for (int k = 0; k <=51; k++){
+
+            Random rand = new Random();
+            int j = rand.nextInt(51);
+
+                shuffled[k] = cards[j];
+                cards[j] = empty;
+
+
+        }
+
     }
+
+
 
     /**
      * Deals a card from this deck.
@@ -77,6 +94,12 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
+
+            if(isEmpty()){
+
+                return null;
+
+            }
 
             size = size - 1;
             return cards.get(size);
