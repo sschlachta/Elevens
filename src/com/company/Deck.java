@@ -13,8 +13,6 @@ public class Deck {
 
     public Deck(String[] ranks, String[] suits, int[] values) {
 
-        //do I have to make another list? I think there is an easier way but I will come back to this later
-
         cards = new ArrayList<>();
 
         for(int i = 0; i < ranks.length; i++){
