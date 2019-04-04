@@ -56,7 +56,6 @@ public class Shuffler {
 
 
     public static void perfectShuffle(int[] values) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 
         Card cards[] = new Card[52];
         Card shuffled[] = new Card[52];
@@ -67,6 +66,7 @@ public class Shuffler {
 
             shuffled[k] = cards[j];
             k = k + 2;
+            
         }
 
         k = 1;
@@ -93,7 +93,6 @@ public class Shuffler {
      * @param values is an array of integers simulating cards to be shuffled.
      */
     public static void selectionShuffle(int[] values) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 
         Card cards[] = new Card[52];
         Card empty = new Card("Empty", "Empty", 60);
