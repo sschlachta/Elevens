@@ -36,7 +36,6 @@ public class ElevensBoard extends Board {
      */
     private static final boolean I_AM_DEBUGGING = false;
 
-
     /**
      * Creates a new <code>ElevensBoard</code> instance.
      */
@@ -70,7 +69,6 @@ public class ElevensBoard extends Board {
             return false;
 
         }
-
     }
 
     /**
@@ -83,9 +81,7 @@ public class ElevensBoard extends Board {
      */
     @Override
     public boolean anotherPlayIsPossible() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-
-
+       
         if(containsPairSum11(cardIndexes())){
 
             return true;
@@ -114,13 +110,16 @@ public class ElevensBoard extends Board {
         
         for(int i = 0; i < selectedCards.size(); i++){
             
-            for(int j = i+1; j < selectedCards.size(); j++){
+            Card c1 = selectedCard.get(i);
             
-                if(selectedCards.get(i).rank() + selectedCards.get(j).rank() = 11){ 
+            for(int j = i+1; j < selectedCards.size(); j++){
+                
+                Card c2 = selectedCard.get(j);
+            
+                if(c1.pointValue() + c2.pointValue() == 11){ 
              
           return true;   
           
-             
          }else{
           
              return false;
@@ -149,15 +148,17 @@ public class ElevensBoard extends Board {
         
         for(int i = 0; i < selectedCards.size(); i++){
             
-            if(selectedCards.get(i).rank().equalsIgnoreCase("king"){
+            Card comp = selectedCards.get(i);
+            
+            if(comp.rank().equalsIgnoreCase("king"){
                 
                 int K = 13;
                 
-            } else if(selectedCards.get(i).rank().equalsIgnoreCase("queen"){
+            } else if(comp.rank().equalsIgnoreCase("queen"){
                 
                 int Q = 12
                     
-            } else if(selectedCards.get(i).rank().equalsIgnoreCase("jack"){
+            } else if(comp.rank().equalsIgnoreCase("jack"){
                 
                 int J = 11;
                 
@@ -165,7 +166,7 @@ public class ElevensBoard extends Board {
            
         }
                       
-           if(K + Q + J = 36){
+           if(K + Q + J == 36){
                
                return true;
                
