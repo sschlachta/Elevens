@@ -6,10 +6,8 @@ import java.util.ArrayList;
 
 public class Deck {
 
-
     private List<Card> cards;
     private int size;
-
 
     public Deck(String[] ranks, String[] suits, int[] values) {
 
@@ -64,7 +62,6 @@ public class Deck {
      * and reset the size to represent the entire deck.
      */
     public void shuffle() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 
         Card cards[] = new Card[52];
         Card empty = new Card("Empty", "Empty", 60);
